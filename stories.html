@@ -6,6 +6,37 @@
   <title>Campfire Stories - Orcas Island Camping</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
+  <style>
+    details.story-card {
+      cursor: pointer;
+    }
+    details.story-card summary {
+      list-style: none;
+      padding: 1rem 1.25rem;
+    }
+    details.story-card summary::-webkit-details-marker {
+      display: none;
+    }
+    details.story-card summary::after {
+      content: '▶ Tap to read';
+      display: block;
+      font-size: 0.85rem;
+      color: var(--forest, #2d5016);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+    details[open].story-card summary::after {
+      content: '▼ Tap to collapse';
+    }
+    details.story-card .story-body {
+      padding: 0 1.25rem 1.25rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    details.story-card .story-body p {
+      margin-bottom: 0.75rem;
+    }
+  </style>
 </head>
 <body>
   <nav class="top-nav" aria-label="Primary">
@@ -36,12 +67,14 @@
     <section class="story-night">
       <h2>Night 1</h2>
 
-      <article class="story-card">
-        <h3>Wimbley's First Campout</h3>
-        <div class="story-meta">
-          <span class="story-type whimsical">✨ Whimsical</span>
-          <span class="story-read-time">⏱️ 3 to 4 minutes</span>
-        </div>
+      <details class="story-card">
+        <summary>
+          <h3>Wimbley's First Campout</h3>
+          <div class="story-meta">
+            <span class="story-type whimsical">✨ Whimsical</span>
+            <span class="story-read-time">⏱️ 3 to 4 minutes</span>
+          </div>
+        </summary>
         <div class="story-body">
           <p>On the edge of a piney forest, under a sky the color of toasted marshmallows, lived a small werewolf cub named Wimbley. Wimbley had fluffy ears, a waggy tail he could not quite control, and paws that always seemed one size too big for the rest of him.</p>
           <p>One evening, Wimbley's mama said, "Tomorrow we are going camping."</p>
@@ -72,14 +105,16 @@
           <p>Just before he drifted off, he whispered, "Best campout ever."</p>
           <p>And from somewhere in the dark came the friendly sounds of the forest answering back.</p>
         </div>
-      </article>
+      </details>
 
-      <article class="story-card">
-        <h3>The Glowing Eyes of Cascade Lake</h3>
-        <div class="story-meta">
-          <span class="story-type spooky">🌙 Spooky</span>
-          <span class="story-read-time">⏱️ 3 to 4 minutes</span>
-        </div>
+      <details class="story-card">
+        <summary>
+          <h3>The Glowing Eyes of Cascade Lake</h3>
+          <div class="story-meta">
+            <span class="story-type spooky">🌙 Spooky</span>
+            <span class="story-read-time">⏱️ 3 to 4 minutes</span>
+          </div>
+        </summary>
         <div class="story-body">
           <p>On the first night at Moran State Park, when the campfire had burned down to glowing coals and the stars were starting to blink awake, a little breeze moved across Cascade Lake.</p>
           <p>It made the water shiver.</p>
@@ -130,7 +165,7 @@
           <p>"Good night, Night Watcher," called the boy.</p>
           <p>And from the dark lake came one final proud little honk, as if the duck had accepted the title.</p>
         </div>
-      </article>
+      </details>
     </section>
 
     <div class="section-divider">🔥 🌲 🌙</div>
@@ -138,12 +173,14 @@
     <section class="story-night">
       <h2>Night 2</h2>
 
-      <article class="story-card">
-        <h3>Wimbley and the Moonlight Trail</h3>
-        <div class="story-meta">
-          <span class="story-type whimsical">✨ Whimsical</span>
-          <span class="story-read-time">⏱️ 3 to 4 minutes</span>
-        </div>
+      <details class="story-card">
+        <summary>
+          <h3>Wimbley and the Moonlight Trail</h3>
+          <div class="story-meta">
+            <span class="story-type whimsical">✨ Whimsical</span>
+            <span class="story-read-time">⏱️ 3 to 4 minutes</span>
+          </div>
+        </summary>
         <div class="story-body">
           <p>On Wimbley's second night in the forest, he felt different.</p>
           <p>Not bigger exactly. His ears were still fuzzy. His paws were still too large. He still tripped over roots if he forgot to look down.</p>
@@ -191,14 +228,16 @@
           <p>When Wimbley returned to camp, his lantern glowed warmly and his tail swung with every step. He slipped into his sleeping bag and whispered into the darkness, "Good night, moonlight trail. I think we are friends now."</p>
           <p>Outside, the forest rustled softly, as if agreeing.</p>
         </div>
-      </article>
+      </details>
 
-      <article class="story-card">
-        <h3>The Whispering Trees of Orcas Island</h3>
-        <div class="story-meta">
-          <span class="story-type spooky">🌙 Spooky</span>
-          <span class="story-read-time">⏱️ 3 to 4 minutes</span>
-        </div>
+      <details class="story-card">
+        <summary>
+          <h3>The Whispering Trees of Orcas Island</h3>
+          <div class="story-meta">
+            <span class="story-type spooky">🌙 Spooky</span>
+            <span class="story-read-time">⏱️ 3 to 4 minutes</span>
+          </div>
+        </summary>
         <div class="story-body">
           <p>On the second night at camp, the island air felt cooler.</p>
           <p>The campfire popped softly. The stars were bright. Beyond the circle of firelight, the tall trees of Moran State Park stood dark and still.</p>
@@ -256,7 +295,7 @@
           <p>"Good night, whispering trees," he called.</p>
           <p>From somewhere above came a final chatter and a soft shower of pine needles, as if the squirrels were saying good night too.</p>
         </div>
-      </article>
+      </details>
     </section>
   </main>
   <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script>
