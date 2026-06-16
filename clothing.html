@@ -121,6 +121,7 @@
       }
     }
   </style>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
   <nav class="top-nav" aria-label="Primary">
@@ -130,6 +131,7 @@
     <a href="activities.html">Activities</a>
     <a href="meals.html">Meals</a>
     <a href="clothing.html" class="active" aria-current="page">Clothing</a>
+    <a href="stories.html">Stories</a>
     <a href="printables/activity-book.html">Activity Book</a>
   </nav>
 
@@ -514,5 +516,6 @@
       applyStoredState();
     }());
   </script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script>
 </body>
 </html>

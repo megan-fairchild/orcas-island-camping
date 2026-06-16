@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Orcas Camp Icon</title>
+  <desc id="desc">A forest badge with a tent, trees, and mountain shapes.</desc>
+  <rect width="512" height="512" rx="96" fill="#f5f0e8"/>
+  <circle cx="256" cy="256" r="208" fill="#e2dccf"/>
+  <path d="M110 360h292v38H110z" fill="#8c6a43"/>
+  <path d="M110 360c28-24 56-36 84-36 36 0 54 24 82 24s48-24 86-24c22 0 48 10 80 36" fill="#9bb07c"/>
+  <path d="M256 150l56 94h-112z" fill="#d4a574"/>
+  <path d="M256 150l56 94h-26l-30-48-30 48h-26z" fill="#b97e45"/>
+  <path d="M256 244v82" stroke="#f5f0e8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M165 244l40-74 40 74z" fill="#2d5016"/>
+  <rect x="195" y="244" width="20" height="70" rx="8" fill="#5a3c22"/>
+  <path d="M307 232l46-88 46 88z" fill="#3f6922"/>
+  <rect x="343" y="232" width="20" height="82" rx="8" fill="#5a3c22"/>
+  <path d="M128 134c18-24 54-28 76-6-12 0-22 6-28 16 0-22-28-18-48-10z" fill="#f0cf6f" opacity="0.9"/>
+</svg>
