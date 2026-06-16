@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orcas Island Camping Activity Book</title>
+  <style>
+    :root {
+      --forest: #2D5016;
+      --forest-light: #4A7A2E;
+      --pine: #6D8C3C;
+      --cream: #FAF3E0;
+      --paper: #FFFDF8;
+      --bark: #7A5230;
+      --bark-dark: #4B3324;
+      --amber: #D4A574;
+      --gold: #E8C97A;
+      --sky: #DCEFE6;
+      --line: #BDA68D;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Trebuchet MS", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef5e7 0%, #f8f1df 30%, #f4ead4 100%);
+      color: var(--bark-dark);
+      line-height: 1.45;
+    }
+
+    nav a {
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.85;
+    }
+
+    .screen-shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1rem 1rem 2rem;
+    }
+
+    .utility-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1rem 0 1.25rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255, 253, 248, 0.95);
+      border: 2px solid rgba(45, 80, 22, 0.15);
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(75, 51, 36, 0.08);
+    }
+
+    .utility-copy h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--forest);
+    }
+
+    .utility-copy p {
+      margin: 0.35rem 0 0;
+      color: #6a5140;
+      font-size: 0.98rem;
+    }
+
+    .print-button {
+      border: none;
+      background: linear-gradient(135deg, var(--forest) 0%, var(--forest-light) 100%);
+      color: #fff;
+      font-weight: 700;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 18px rgba(45, 80, 22, 0.24);
+    }
+
+    .book-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: #eef4e7;
+      color: var(--forest);
+      font-weight: 700;
+      font-size: 0.84rem;
+      margin-top: 0.85rem;
+    }
+
+    .print-page {
+      background: var(--paper);
+      border: 2px solid #eadfcf;
+      border-radius: 24px;
+      padding: 1.25rem;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 14px 30px rgba(75, 51, 36, 0.08);
+      break-after: page;
+      page-break-after: always;
+      overflow: hidden;
+    }
+
+    .print-page:last-of-type {
+      break-after: auto;
+      page-break-after: auto;
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #efe4d3;
+      padding-bottom: 0.8rem;
+    }
+
+    .page-title {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(1.55rem, 2.4vw, 2.05rem);
+    }
+
+    .page-subtitle {
+      margin: 0.35rem 0 0;
+      color: #705747;
+      font-size: 0.98rem;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f8dca8 0%, var(--amber) 85%);
+      color: var(--forest);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      border: 3px solid #fff;
+      box-shadow: 0 6px 14px rgba(122, 82, 48, 0.18);
+    }
+
+    .activity-intro {
+      background: linear-gradient(135deg, #f5f0e4 0%, #eef4e7 100%);
+      border: 1px solid #e7dcca;
+      border-radius: 16px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .activity-intro p {
+      margin: 0;
+    }
+
+    .scavenger-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .hunt-card {
+      border: 2px solid #e9ddcc;
+      border-radius: 18px;
+      padding: 0.75rem;
+      background: #fffdfa;
+      min-height: 135px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .icon-wrap {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: #f1f6ea;
+      display: grid;
+      place-items: center;
+      border: 1px solid #d8e5c8;
+    }
+
+    .hunt-card svg,
+    .joke-illustrations svg,
+    .journal-decoration svg,
+    .dot-to-dot svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hunt-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      color: var(--bark-dark);
+      font-size: 0.96rem;
+    }
+
+    .checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--forest);
+      border-radius: 7px;
+      background: #fff;
+      cursor: pointer;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .checkbox:checked {
+      background: var(--forest);
+      border-color: var(--forest);
+    }
+
+    .checkbox:checked::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      width: 6px;
+      height: 12px;
+      border: solid #fff;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+
+    .bonus-box,
+    .drawing-box,
+    .memory-drawing {
+      margin-top: 1rem;
+      border: 2px dashed #b89f85;
+      border-radius: 18px;
+      padding: 0.9rem;
+      min-height: 130px;
+      background: #fffefa;
+    }
+
+    .bonus-box strong,
+    .memory-drawing strong {
+      color: var(--forest);
+    }
+
+    .bonus-box .draw-space,
+    .memory-drawing .draw-space {
+      min-height: 76px;
+      margin-top: 0.7rem;
+      border-top: 2px dotted #d8c4ad;
+    }
+
+    .bingo-board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border: 3px solid var(--forest);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .bingo-cell {
+      min-height: 104px;
+      border-right: 2px solid #d8c8b1;
+      border-bottom: 2px solid #d8c8b1;
+      padding: 0.65rem;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.86rem;
+      background: #fffdf9;
+    }
+
+    .bingo-cell:nth-child(5n) {
+      border-right: none;
+    }
+
+    .bingo-cell:nth-last-child(-n + 5) {
+      border-bottom: none;
+    }
+
+    .bingo-cell.free {
+      background: linear-gradient(135deg, #f6e2a8 0%, #f9efd1 100%);
+      color: var(--forest);
+      font-size: 1rem;
+    }
+
+    .word-search-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .word-grid {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      background: #fff;
+      border: 3px solid var(--forest);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .word-grid td {
+      width: 8.33%;
+      border: 1px solid #d8c8b1;
+      text-align: center;
+      font-family: "Courier New", monospace;
+      font-weight: 800;
+      color: var(--bark-dark);
+      font-size: 1.15rem;
+      padding: 0.5rem 0;
+      background: #fffdfb;
+    }
+
+    .word-bank {
+      background: #f6f2e8;
+      border: 2px solid #eadfcf;
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .word-bank h3,
+    .journal-prompts h3,
+    .decoder-key h3,
+    .memory-list h3,
+    .jokes-list h3 {
+      margin: 0 0 0.65rem;
+      color: var(--forest);
+      font-size: 1.1rem;
+    }
+
+    .word-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .word-pill {
+      display: inline-block;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #d9cab6;
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+
+    .journal-page {
+      position: relative;
+      min-height: 980px;
+    }
+
+    .journal-decoration {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .journal-decoration .deco-box {
+      width: 88px;
+      height: 54px;
+      opacity: 0.9;
+    }
+
+    .drawing-box {
+      min-height: 360px;
+      position: relative;
+      background:
+        linear-gradient(transparent 96%, rgba(0,0,0,0.02) 96%),
+        #fffefb;
+    }
+
+    .drawing-label {
+      position: absolute;
+      top: 0.8rem;
+      left: 1rem;
+      font-weight: 700;
+      color: #735b48;
+      background: rgba(255,255,255,0.85);
+      padding: 0 0.35rem;
+    }
+
+    .journal-prompts {
+      margin-top: 1rem;
+      background: #fffdfa;
+      border: 2px solid #eadfcf;
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .line-prompt {
+      margin-bottom: 0.95rem;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .writing-lines {
+      height: 74px;
+      background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 24px, #cbb7a0 24px, #cbb7a0 26px);
+      margin-top: 0.4rem;
+    }
+
+    .decoder-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(230px, 0.9fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .decoder-messages {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .message-card {
+      border: 2px solid #eadfcf;
+      border-radius: 18px;
+      padding: 0.95rem;
+      background: #fffefb;
+    }
+
+    .emoji-code {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      letter-spacing: 0.08rem;
+      word-break: break-word;
+    }
+
+    .answer-line {
+      margin-top: 0.75rem;
+      border-bottom: 2px dashed #bfa88f;
+      height: 1.6rem;
+    }
+
+    .decoder-key {
+      background: #f6f2e8;
+      border: 2px solid #eadfcf;
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .key-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem 0.9rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .dot-to-dot {
+      background: #fffdf9;
+      border: 2px solid #eadfcf;
+      border-radius: 22px;
+      padding: 1rem;
+    }
+
+    .dot-frame {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(180deg, #f2f8ff 0%, #fdfcf7 45%, #f4eedf 100%);
+      border: 2px solid #d7c8b0;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .jokes-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .jokes-list {
+      background: #fffdf9;
+      border: 2px solid #eadfcf;
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .jokes-list ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .jokes-list li {
+      padding-left: 0.25rem;
+    }
+
+    .joke-q {
+      font-weight: 800;
+      color: var(--forest);
+      display: block;
+      margin-bottom: 0.18rem;
+    }
+
+    .joke-illustrations {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+
+    .joke-illustrations .art-box {
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      border: 2px solid #e5d8c6;
+      background: #f5f1e6;
+      padding: 0.65rem;
+    }
+
+    .memory-list {
+      background: #fffdf9;
+      border: 2px solid #eadfcf;
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .fill-line {
+      display: block;
+      margin: 0.75rem 0;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .fill-blank {
+      display: inline-block;
+      min-width: 62%;
+      border-bottom: 2px dashed #bfa88f;
+      transform: translateY(-2px);
+      margin-left: 0.35rem;
+      height: 1.1rem;
+    }
+
+    .star-line {
+      margin-top: 1rem;
+      font-size: 1.6rem;
+      color: #b48a3e;
+      letter-spacing: 0.18rem;
+      font-weight: 700;
+    }
+
+    .small-note {
+      font-size: 0.86rem;
+      color: #715745;
+      margin-top: 0.35rem;
+    }
+
+    @media (max-width: 860px) {
+      .scavenger-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .word-search-wrap,
+      .decoder-layout,
+      .jokes-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .screen-shell {
+        padding: 0.75rem 0.75rem 1.5rem;
+      }
+
+      .utility-bar,
+      .print-page {
+        border-radius: 18px;
+      }
+
+      .page-header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .bingo-cell {
+        min-height: 88px;
+        font-size: 0.74rem;
+        padding: 0.4rem;
+      }
+
+      .word-grid td {
+        font-size: 0.92rem;
+        padding: 0.35rem 0;
+      }
+
+      .fill-blank {
+        min-width: 100%;
+        margin-left: 0;
+        margin-top: 0.2rem;
+      }
+    }
+
+    @media print {
+      @page {
+        size: auto;
+        margin: 0.45in;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      nav,
+      .utility-bar {
+        display: none !important;
+      }
+
+      .screen-shell {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .print-page {
+        margin: 0 0 0.2in;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background: #fff;
+      }
+
+      .activity-intro,
+      .word-bank,
+      .journal-prompts,
+      .message-card,
+      .decoder-key,
+      .dot-to-dot,
+      .jokes-list,
+      .memory-list,
+      .hunt-card,
+      .bingo-cell,
+      .bonus-box,
+      .drawing-box,
+      .memory-drawing,
+      .joke-illustrations .art-box {
+        background: #fff !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav style="background:#2D5016; padding:0.75rem 1.5rem; display:flex; gap:1rem; align-items:center;">
+    <a href="../event-hub.html" style="color:#FAF3E0; font-weight:700; text-decoration:none;">🏕️ Orcas Island</a>
+    <a href="../itinerary.html" style="color:#FAF3E0; text-decoration:none; font-size:0.85rem;">Itinerary</a>
+    <a href="../activities.html" style="color:#FAF3E0; text-decoration:none; font-size:0.85rem;">Activities</a>
+    <a href="../meals.html" style="color:#FAF3E0; text-decoration:none; font-size:0.85rem;">Meals</a>
+    <a href="../clothing.html" style="color:#FAF3E0; text-decoration:none; font-size:0.85rem;">Clothing</a>
+  </nav>
+
+  <div class="screen-shell">
+    <div class="utility-bar">
+      <div class="utility-copy">
+        <h1>First Camping Trip Activity Book</h1>
+        <p>Moran State Park, Orcas Island, Washington - June 17-19, 2026</p>
+        <div class="book-note">🌲 For one brave 6-year-old explorer, plus 2 happy camp dogs</div>
+      </div>
+      <button class="print-button" type="button" onclick="window.print()">🖨️ Print Activity Book</button>
+    </div>
+
+    <main>
+      <section class="print-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Nature Scavenger Hunt</h2>
+            <p class="page-subtitle">Check off every wild thing you spot around camp. Look up high, look down low, and keep an eye out for furry and feathery neighbors.</p>
+          </div>
+          <div class="badge">1</div>
+        </div>
+
+        <div class="activity-intro">
+          <p><strong>Explorer mission:</strong> Find all 16 nature treasures while hiking, playing by camp, or walking with the dogs.</p>
+        </div>
+
+        <div class="scavenger-grid">
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 10v9"/><path d="M24 18c-7 5-8 18 0 24"/><path d="M40 18c7 5 8 18 0 24"/><path d="M24 28c-5 3-6 10 0 15"/><path d="M40 28c5 3 6 10 0 15"/><path d="M32 19c-4 2-7 9-7 15s3 13 7 16c4-3 7-10 7-16s-3-13-7-15Z"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Pinecone"><span>Pinecone</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#4A7A2E" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 12v40"/><path d="M32 18c-10 2-15 8-18 14"/><path d="M32 24c9 2 14 8 17 14"/><path d="M32 31c-9 1-13 6-16 11"/><path d="M32 37c8 1 12 6 15 11"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Fern"><span>Fern</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#5E5E5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="4"/><path d="M32 8v20M32 36v20M8 32h20M36 32h20M15 15l13 13M36 36l13 13M49 15 36 28M15 49l13-13"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Spider web"><span>Spider web</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42c3-8 10-12 18-11 4-8 16-8 21 0 7-1 13 4 13 11 0 6-5 11-12 11H24c-7 0-12-5-12-11Z"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Smooth rock"><span>Smooth rock</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 31c0-10 6-16 13-16s13 6 13 16Z"/><path d="M22 31h20"/><path d="M32 31v19"/><path d="M24 50h16"/><path d="M25 24c2-2 4-3 7-3s5 1 7 3"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Mushroom"><span>Mushroom</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#4B3324" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 35c8 3 15 2 23-5 6-6 11-7 18-6-3 8-8 13-16 15l-4 7-5-3-3 8-6-5 1-7c-5-1-8-2-8-4Z"/><circle cx="43" cy="25" r="1.6" fill="#4B3324" stroke="none"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Bird"><span>Bird</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M19 45c4-11 12-18 20-18 7 0 13 4 15 10 2 6-1 12-8 13-4 1-8-1-11-4-2 2-5 4-9 4h-7l5-5c-3-1-4-3-5-4Z"/><path d="M17 30c-5-4-6-10-2-15 7 1 12 6 12 12"/><circle cx="44" cy="31" r="1.5" fill="#7A5230" stroke="none"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Squirrel"><span>Squirrel</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#B97061" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="24" r="8"/><path d="M32 32v20"/><path d="M12 36h12"/><path d="M40 36h12"/><path d="M21 17 15 11M43 17l6-6"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Wildflower"><span>Wildflower</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#4A7A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 42c4-8 9-11 15-9 2-6 7-9 12-8 4 0 7 2 9 5 7-3 14 2 14 9 0 6-4 10-11 10H24c-7 0-11-3-11-7Z"/><path d="M22 38c3 2 5 4 6 8M34 34c2 2 4 5 4 10M46 36c3 2 5 4 6 8"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Moss"><span>Moss</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#8C7B69" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 46c8-2 17-11 21-25 4 11 0 24-10 30-5 3-10 2-11-5Z"/><path d="M29 41c5-5 8-11 10-18"/><path d="M24 38c3-2 6-6 9-12"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Feather"><span>Feather</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M8 42c5-2 10-2 15 0" stroke-dasharray="3 5"/><path d="M23 42c5-2 10-2 15 0" stroke-dasharray="3 5"/><path d="M38 42c5-2 10-2 15 0" stroke-dasharray="3 5"/><circle cx="18" cy="30" r="4"/><circle cx="32" cy="30" r="4"/><circle cx="46" cy="30" r="4"/><path d="M18 26v-4M16 28l-3-2M20 28l3-2M32 26v-4M30 28l-3-2M34 28l3-2M46 26v-4M44 28l-3-2M48 28l3-2"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Ant trail"><span>Ant trail</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#6E5AA6" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 32c-7-10-16-13-22-8 0 9 7 16 18 16"/><path d="M32 32c7-10 16-13 22-8 0 9-7 16-18 16"/><path d="M32 32c-7 10-16 13-22 8 0-9 7-16 18-16"/><path d="M32 32c7 10 16 13 22 8 0-9-7-16-18-16"/><path d="M32 20v24"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Butterfly"><span>Butterfly</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="10" width="28" height="44" rx="4"/><path d="M25 14v36M32 10v44M39 14v36"/><path d="M20 26c4-3 7-3 10 0s6 3 9 0 6-3 9 0"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Bark pattern"><span>Bark pattern</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 40c0-8 6-14 14-14s14 6 14 14-6 14-14 14-14-6-14-14Z"/><path d="M29 40c0-4 3-7 7-7 3 0 6 2 6 5 0 4-4 6-8 6"/><path d="M18 40c-3-2-5-6-5-10 0-7 5-12 12-12"/><circle cx="43" cy="39" r="1.5" fill="#7A5230" stroke="none"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Snail"><span>Snail</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 16c8 0 14 6 14 14v3H18v-3c0-8 6-14 14-14Z"/><path d="M24 16c0-5 4-8 8-8s8 3 8 8"/><path d="M24 33v10c0 6 4 11 8 13 4-2 8-7 8-13V33"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Acorn"><span>Acorn</span></span></label>
+          <label class="hunt-card"><span class="icon-wrap"><svg viewBox="0 0 64 64" fill="none" stroke="#7A5230" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 24c2-3 4-5 7-5 4 0 7 4 7 8 0 3-2 6-5 7"/><path d="M46 24c-2-3-4-5-7-5-4 0-7 4-7 8 0 3 2 6 5 7"/><path d="M20 42c2-3 4-5 7-5 4 0 7 4 7 8 0 3-2 6-5 7"/><path d="M42 42c-2-3-4-5-7-5-4 0-7 4-7 8 0 3 2 6 5 7"/></svg></span><span class="hunt-label"><input class="checkbox" type="checkbox" aria-label="Animal tracks"><span>Animal tracks</span></span></label>
+        </div>
+
+        <div class="bonus-box">
+          <strong>Bonus: Draw your coolest find!</strong>
+          <div class="draw-space"></div>
+        </div>
+      </section>
+
+      <section class="print-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Campfire Bingo</h2>
+            <p class="page-subtitle">Mark a square whenever it happens. Can you get five in a row before sleepy time?</p>
+          </div>
+          <div class="badge">2</div>
+        </div>
+
+        <div class="bingo-board" aria-label="Campfire bingo board">
+          <div class="bingo-cell">Marshmallow fell in fire</div>
+          <div class="bingo-cell">Saw a shooting star</div>
+          <div class="bingo-cell">Heard an owl</div>
+          <div class="bingo-cell">Dog barked at nothing</div>
+          <div class="bingo-cell">Found a cool stick</div>
+          <div class="bingo-cell">Told a joke</div>
+          <div class="bingo-cell">Saw the Big Dipper</div>
+          <div class="bingo-cell">Heard a frog</div>
+          <div class="bingo-cell">Roasted perfect marshmallow</div>
+          <div class="bingo-cell">Someone said "this is nice"</div>
+          <div class="bingo-cell">Flashlight tag</div>
+          <div class="bingo-cell">Counted 10 stars</div>
+          <div class="bingo-cell free">FREE SPACE<br>🔥</div>
+          <div class="bingo-cell">Heard a splash</div>
+          <div class="bingo-cell">Wind blew something over</div>
+          <div class="bingo-cell">Made someone laugh</div>
+          <div class="bingo-cell">Saw a bat</div>
+          <div class="bingo-cell">Dog fell asleep first</div>
+          <div class="bingo-cell">Smelled campfire smoke</div>
+          <div class="bingo-cell">Found heart-shaped rock</div>
+          <div class="bingo-cell">Saw the moon</div>
+          <div class="bingo-cell">Heard a bird at night</div>
+          <div class="bingo-cell">Made a shadow puppet</div>
+          <div class="bingo-cell">Said goodnight to the trees</div>
+          <div class="bingo-cell">Yawned first</div>
+        </div>
+      </section>
+
+      <section class="print-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Camping Word Search</h2>
+            <p class="page-subtitle">Circle the camping words. They go across, down, and diagonal.</p>
+          </div>
+          <div class="badge">3</div>
+        </div>
+
+        <div class="word-search-wrap">
+          <table class="word-grid" aria-label="Camping word search">
+            <tbody>
+              <tr><td>E</td><td>F</td><td>F</td><td>E</td><td>E</td><td>D</td><td>S</td><td>Z</td><td>Z</td><td>D</td><td>F</td><td>J</td></tr>
+              <tr><td>Q</td><td>S</td><td>S</td><td>D</td><td>R</td><td>P</td><td>N</td><td>O</td><td>O</td><td>T</td><td>R</td><td>C</td></tr>
+              <tr><td>Y</td><td>E</td><td>A</td><td>X</td><td>B</td><td>H</td><td>N</td><td>W</td><td>E</td><td>N</td><td>H</td><td>A</td></tr>
+              <tr><td>H</td><td>A</td><td>Y</td><td>A</td><td>H</td><td>L</td><td>L</td><td>A</td><td>K</td><td>E</td><td>S</td><td>M</td></tr>
+              <tr><td>H</td><td>G</td><td>Y</td><td>C</td><td>P</td><td>S</td><td>M</td><td>Y</td><td>N</td><td>T</td><td>I</td><td>P</td></tr>
+              <tr><td>K</td><td>L</td><td>O</td><td>P</td><td>Y</td><td>B</td><td>H</td><td>R</td><td>A</td><td>R</td><td>F</td><td>F</td></tr>
+              <tr><td>S</td><td>E</td><td>E</td><td>R</td><td>T</td><td>V</td><td>B</td><td>R</td><td>H</td><td>A</td><td>O</td><td>I</td></tr>
+              <tr><td>M</td><td>Q</td><td>H</td><td>B</td><td>F</td><td>T</td><td>S</td><td>E</td><td>F</td><td>I</td><td>S</td><td>R</td></tr>
+              <tr><td>O</td><td>G</td><td>C</td><td>I</td><td>C</td><td>Y</td><td>K</td><td>F</td><td>Y</td><td>L</td><td>K</td><td>E</td></tr>
+              <tr><td>R</td><td>C</td><td>K</td><td>U</td><td>C</td><td>N</td><td>Y</td><td>C</td><td>A</td><td>N</td><td>O</td><td>E</td></tr>
+              <tr><td>E</td><td>J</td><td>C</td><td>Q</td><td>Y</td><td>O</td><td>H</td><td>N</td><td>V</td><td>E</td><td>F</td><td>D</td></tr>
+              <tr><td>S</td><td>J</td><td>N</td><td>K</td><td>D</td><td>W</td><td>D</td><td>Q</td><td>N</td><td>F</td><td>S</td><td>B</td></tr>
+            </tbody>
+          </table>
+
+          <div class="word-bank">
+            <h3>Find these words</h3>
+            <div class="word-list">
+              <span class="word-pill">TENT</span>
+              <span class="word-pill">CAMPFIRE</span>
+              <span class="word-pill">LAKE</span>
+              <span class="word-pill">HIKE</span>
+              <span class="word-pill">TRAIL</span>
+              <span class="word-pill">SMORES</span>
+              <span class="word-pill">STARS</span>
+              <span class="word-pill">FISH</span>
+              <span class="word-pill">CANOE</span>
+              <span class="word-pill">TREES</span>
+              <span class="word-pill">FROG</span>
+              <span class="word-pill">OWL</span>
+              <span class="word-pill">DEER</span>
+              <span class="word-pill">EAGLE</span>
+              <span class="word-pill">ISLAND</span>
+              <span class="word-pill">FERRY</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="print-page journal-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Nature Journal - Day 1: Arrival Day</h2>
+            <p class="page-subtitle">First look at camp, first camp smells, first big adventure feeling.</p>
+          </div>
+          <div class="badge">4</div>
+        </div>
+
+        <div class="journal-decoration" aria-hidden="true">
+          <div class="deco-box"><svg viewBox="0 0 120 70" fill="none" stroke="#4A7A2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 54c8-18 12-30 12-40"/><path d="M32 24c-8 0-14-6-15-13"/><path d="M31 35c-9 0-17 5-20 12"/><path d="M48 52c5-15 8-25 8-36"/><path d="M56 22c9 2 15-1 21-9"/><path d="M54 34c9 0 16 3 24 10"/><path d="M78 54c5-13 8-21 8-32"/><path d="M89 29c7 3 12 2 18-3"/><path d="M90 40c7 1 13 5 19 11"/></svg></div>
+          <div class="deco-box"><svg viewBox="0 0 120 70" fill="none" stroke="#7A5230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M26 52c2-12 8-20 16-26 7-5 11-11 11-18"/><path d="M34 50c3-9 7-15 14-20"/><path d="M67 15c12 2 21 10 26 22"/><path d="M77 15c-4 11 0 28 11 37"/><path d="M60 55h36"/></svg></div>
+        </div>
+
+        <div class="drawing-box">
+          <div class="drawing-label">Draw what Day 1 looked like</div>
+        </div>
+
+        <div class="journal-prompts">
+          <div class="line-prompt">Today I saw...<div class="writing-lines"></div></div>
+          <div class="line-prompt">My favorite part was...<div class="writing-lines"></div></div>
+          <div class="line-prompt">Tomorrow I want to...<div class="writing-lines"></div></div>
+        </div>
+      </section>
+
+      <section class="print-page journal-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Nature Journal - Day 2: Adventure Day</h2>
+            <p class="page-subtitle">This is the big exploring day. Save a spot for the coolest trail, lake, or dog moment.</p>
+          </div>
+          <div class="badge">5</div>
+        </div>
+
+        <div class="journal-decoration" aria-hidden="true">
+          <div class="deco-box"><svg viewBox="0 0 120 70" fill="none" stroke="#4A7A2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 54h94"/><path d="M23 54V20l12-8v42"/><path d="M35 30l10-7v31"/><path d="M65 54V16l12 8v30"/><path d="M77 28l10 7v19"/><circle cx="97" cy="18" r="8"/></svg></div>
+          <div class="deco-box"><svg viewBox="0 0 120 70" fill="none" stroke="#7A5230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 54c5-10 13-15 23-15s18 5 23 15"/><path d="M52 24c0 11-9 20-20 20s-20-9-20-20"/><path d="M72 54c5-10 13-15 23-15s18 5 23 15"/><path d="M106 24c0 11-9 20-20 20s-20-9-20-20"/></svg></div>
+        </div>
+
+        <div class="drawing-box">
+          <div class="drawing-label">Draw your biggest Day 2 adventure</div>
+        </div>
+
+        <div class="journal-prompts">
+          <div class="line-prompt">Today I saw...<div class="writing-lines"></div></div>
+          <div class="line-prompt">My favorite part was...<div class="writing-lines"></div></div>
+          <div class="line-prompt">Tomorrow I want to...<div class="writing-lines"></div></div>
+        </div>
+      </section>
+
+      <section class="print-page journal-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Nature Journal - Day 3: Going Home</h2>
+            <p class="page-subtitle">One last page for favorite memories, sleepy dog faces, and the ride home.</p>
+          </div>
+          <div class="badge">6</div>
+        </div>
+
+        <div class="journal-decoration" aria-hidden="true">
+          <div class="deco-box"><svg viewBox="0 0 120 70" fill="none" stroke="#4A7A2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 52c10-6 16-14 19-25"/><path d="M32 28c6 1 10-1 14-6"/><path d="M32 40c8 0 14 3 20 9"/><path d="M62 52c10-6 16-14 19-25"/><path d="M80 28c6 1 10-1 14-6"/><path d="M80 40c8 0 14 3 20 9"/></svg></div>
+          <div class="deco-box"><svg viewBox="0 0 120 70" fill="none" stroke="#7A5230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 54c0-8 5-14 12-14s12 6 12 14"/><path d="M19 54h34"/><path d="M72 54c0-8 5-14 12-14s12 6 12 14"/><path d="M67 54h34"/><circle cx="36" cy="29" r="8"/><circle cx="84" cy="29" r="8"/></svg></div>
+        </div>
+
+        <div class="drawing-box">
+          <div class="drawing-label">Draw the memory you want to keep forever</div>
+        </div>
+
+        <div class="journal-prompts">
+          <div class="line-prompt">Today I saw...<div class="writing-lines"></div></div>
+          <div class="line-prompt">My favorite part was...<div class="writing-lines"></div></div>
+          <div class="line-prompt">Tomorrow I want to...<div class="writing-lines"></div></div>
+        </div>
+      </section>
+
+      <section class="print-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Secret Code Decoder</h2>
+            <p class="page-subtitle">Use the nature code key to crack the camping messages. Write the answer on the line below each one.</p>
+          </div>
+          <div class="badge">7</div>
+        </div>
+
+        <div class="decoder-layout">
+          <div class="decoder-messages">
+            <div class="message-card">
+              <strong>Message 1</strong>
+              <div class="emoji-code">🐟 / 🍃 🦉 🌊 🦅 / 🏕️ 🌲 🌙 🪨 🐟 🐌 🌿</div>
+              <div class="answer-line"></div>
+            </div>
+            <div class="message-card">
+              <strong>Message 2</strong>
+              <div class="emoji-code">🦉 🐇 🏕️ 🌲 ⭐ / 🐟 ⭐ 🍃 🌲 🐌 🦌</div>
+              <div class="answer-line"></div>
+            </div>
+            <div class="message-card">
+              <strong>Message 3</strong>
+              <div class="emoji-code">🐻 🦅 ⭐ 🛶 / 🛶 🐇 🐟 🪨 / 🦅 🌊 🦅 🐇</div>
+              <div class="answer-line"></div>
+            </div>
+          </div>
+
+          <div class="decoder-key">
+            <h3>Code Key</h3>
+            <div class="key-grid">
+              <div>A = 🌲</div><div>N = 🐌</div>
+              <div>B = 🐻</div><div>O = 🦉</div>
+              <div>C = 🏕️</div><div>P = 🪨</div>
+              <div>D = 🦌</div><div>Q = 🌼</div>
+              <div>E = 🦅</div><div>R = 🐇</div>
+              <div>F = 🔥</div><div>S = ⭐</div>
+              <div>G = 🌿</div><div>T = 🛶</div>
+              <div>H = 🐿️</div><div>U = 🦋</div>
+              <div>I = 🐟</div><div>V = 🌊</div>
+              <div>J = 🪵</div><div>W = 🕸️</div>
+              <div>K = 🍄</div><div>X = 🪶</div>
+              <div>L = 🍃</div><div>Y = 🐾</div>
+              <div>M = 🌙</div><div>Z = 🌞</div>
+            </div>
+            <p class="small-note">Slash marks show spaces between words.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="print-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Dot-to-Dot: Camp Scene</h2>
+            <p class="page-subtitle">Connect the dots from 1 to 25 to reveal a tent with trees.</p>
+          </div>
+          <div class="badge">8</div>
+        </div>
+
+        <div class="dot-to-dot">
+          <div class="dot-frame">
+            <svg viewBox="0 0 520 390" fill="none" aria-label="Dot to dot camping scene">
+              <rect width="520" height="390" fill="transparent"/>
+              <circle cx="430" cy="76" r="18" fill="#fff8d6" stroke="#e0c77f" stroke-width="3"/>
+              <path d="M0 320c64-18 110-16 170 0s124 17 188-4 114-25 162-10v84H0Z" fill="#e9dfc7" opacity="0.7"/>
+              <g fill="#fff" stroke="#7A5230" stroke-width="2.2">
+                <circle cx="95" cy="330" r="6"/><circle cx="95" cy="275" r="6"/><circle cx="70" cy="245" r="6"/><circle cx="95" cy="220" r="6"/><circle cx="68" cy="185" r="6"/><circle cx="95" cy="145" r="6"/><circle cx="125" cy="185" r="6"/><circle cx="105" cy="220" r="6"/><circle cx="130" cy="245" r="6"/><circle cx="105" cy="275" r="6"/><circle cx="145" cy="330" r="6"/><circle cx="210" cy="330" r="6"/><circle cx="280" cy="210" r="6"/><circle cx="350" cy="330" r="6"/><circle cx="305" cy="330" r="6"/><circle cx="280" cy="280" r="6"/><circle cx="255" cy="330" r="6"/><circle cx="390" cy="330" r="6"/><circle cx="390" cy="280" r="6"/><circle cx="365" cy="250" r="6"/><circle cx="390" cy="220" r="6"/><circle cx="390" cy="170" r="6"/><circle cx="420" cy="220" r="6"/><circle cx="445" cy="250" r="6"/><circle cx="420" cy="330" r="6"/>
+              </g>
+              <g fill="#4B3324" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">
+                <text x="80" y="323">1</text><text x="79" y="268">2</text><text x="54" y="238">3</text><text x="79" y="213">4</text><text x="52" y="178">5</text><text x="79" y="138">6</text><text x="129" y="178">7</text><text x="109" y="213">8</text><text x="134" y="238">9</text><text x="110" y="269">10</text><text x="124" y="323">11</text><text x="193" y="323">12</text><text x="262" y="203">13</text><text x="353" y="323">14</text><text x="308" y="323">15</text><text x="283" y="273">16</text><text x="238" y="323">17</text><text x="373" y="323">18</text><text x="373" y="273">19</text><text x="348" y="243">20</text><text x="373" y="213">21</text><text x="373" y="163">22</text><text x="423" y="213">23</text><text x="448" y="243">24</text><text x="423" y="323">25</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="print-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Camping Jokes Page</h2>
+            <p class="page-subtitle">Read these around the picnic table, by the fire, or while waiting for the ferry.</p>
+          </div>
+          <div class="badge">9</div>
+        </div>
+
+        <div class="jokes-layout">
+          <div class="jokes-list">
+            <h3>Campfire giggles</h3>
+            <ol>
+              <li><span class="joke-q">What do you call a bear with no teeth?</span>A gummy bear!</li>
+              <li><span class="joke-q">Why did the tree pack a suitcase?</span>It was ready to leaf town.</li>
+              <li><span class="joke-q">What kind of music do campfires like?</span>Hot tracks.</li>
+              <li><span class="joke-q">Why do frogs like camping?</span>Because they get to eat French flies.</li>
+              <li><span class="joke-q">What do you call an owl who tells jokes at camp?</span>A real hoot.</li>
+              <li><span class="joke-q">Why was the tent so good at secrets?</span>Because it always zipped its lips.</li>
+              <li><span class="joke-q">Why did the squirrel sit near the fire?</span>It wanted to be a little toastier.</li>
+              <li><span class="joke-q">What did one hiking boot say to the other?</span>We make a great pair on the trail.</li>
+            </ol>
+          </div>
+
+          <div class="joke-illustrations" aria-hidden="true">
+            <div class="art-box"><svg viewBox="0 0 100 100" fill="none" stroke="#4A7A2E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 82V34l12-8v56"/><path d="M30 45l11-8v45"/><path d="M59 82V28l14 9v45"/><path d="M73 45l11 8v29"/><path d="M10 82h80"/><circle cx="78" cy="20" r="8" stroke="#D4A574"/></svg></div>
+            <div class="art-box"><svg viewBox="0 0 100 100" fill="none" stroke="#7A5230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 72 50 28l32 44Z"/><path d="M32 72V54h18"/><path d="M64 72l-8-18"/><path d="M12 78h76"/></svg></div>
+            <div class="art-box"><svg viewBox="0 0 100 100" fill="none" stroke="#7A5230" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="54" r="18"/><circle cx="39" cy="39" r="8"/><circle cx="61" cy="39" r="8"/><path d="M42 54c0-4 4-7 8-7s8 3 8 7"/><path d="M33 72c5 6 11 10 17 10s12-4 17-10"/></svg></div>
+            <div class="art-box"><svg viewBox="0 0 100 100" fill="none" stroke="#4B3324" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M25 78c5-10 12-15 25-15s20 5 25 15"/><circle cx="38" cy="41" r="14"/><circle cx="62" cy="41" r="14"/><circle cx="43" cy="39" r="2" fill="#4B3324" stroke="none"/><circle cx="57" cy="39" r="2" fill="#4B3324" stroke="none"/><path d="M45 49c4 3 6 4 10 0"/></svg></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="print-page">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">My Camping Memories</h2>
+            <p class="page-subtitle">Your first camping trip at Moran State Park is now part of your explorer story.</p>
+          </div>
+          <div class="badge">10</div>
+        </div>
+
+        <div class="memory-list">
+          <h3>My first camping trip!</h3>
+          <span class="fill-line">I went camping at <span class="fill-blank"></span></span>
+          <span class="fill-line">The weather was <span class="fill-blank"></span></span>
+          <span class="fill-line">I slept in a <span class="fill-blank"></span></span>
+          <span class="fill-line">My favorite meal was <span class="fill-blank"></span></span>
+          <span class="fill-line">The best activity was <span class="fill-blank"></span></span>
+          <span class="fill-line">The funniest thing that happened was <span class="fill-blank"></span></span>
+          <span class="fill-line">Next time I want to <span class="fill-blank"></span></span>
+        </div>
+
+        <div class="memory-drawing">
+          <strong>Draw your favorite camping memory</strong>
+          <div class="draw-space" style="min-height: 220px;"></div>
+        </div>
+
+        <div class="star-line">I rate this trip: ☆☆☆☆☆</div>
+        <div class="small-note">Color in your stars after the trip is over.</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

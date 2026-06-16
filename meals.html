@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orcas Island Camping - Meals & Groceries</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .meal-header,
+    .grocery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .meal-note,
+    .selection-note {
+      display: inline-block;
+      background: rgba(212, 165, 116, 0.2);
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .swap-status {
+      margin-top: 0.75rem;
+      color: var(--muted-text);
+      font-size: 0.9rem;
+    }
+
+    .meal-grid,
+    .grocery-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .grocery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 1rem;
+    }
+
+    .mini-list {
+      padding-left: 1.2rem;
+      margin-top: 0.75rem;
+    }
+
+    .mini-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .note-strip {
+      background: #f3efe5;
+      border-left: 4px solid var(--accent);
+      padding: 0.9rem 1rem;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .grocery-empty {
+      color: var(--muted-text);
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .meal-header,
+      .grocery-header {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="event-hub.html" class="nav-brand">🌲 Orcas Field Guide</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a href="activities.html">Activities</a>
+    <a href="meals.html" class="active">Meals</a>
+    <a href="clothing.html">Clothing</a>
+    <a href="printables/activity-book.html">Activity Book</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="emblem">🍳</div>
+    <h1>Meals & Grocery Game Plan</h1>
+    <p class="subtitle">Simple camp meals for June 17-19, 2026 at Moran State Park</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Camp kitchen overview</h2>
+      <p style="margin-top: 0.75rem; color: var(--muted-text);">
+        Crew: 2 adults, 1 child age 6, and 2 dogs. The plan keeps cooking easy, kid-friendly, and flexible with a mix of campfire and camp stove meals.
+      </p>
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <span class="selection-note">No red meat</span>
+        <span class="selection-note">Prep-ahead friendly</span>
+        <span class="selection-note">Trail lunch built in</span>
+      </div>
+    </section>
+
+    <section class="prep-kit">
+      <h3>June 16 prep timeline</h3>
+      <ul class="mini-list">
+        <li>Pre-scramble raw eggs into a sealed jar or container for quick camp breakfast.</li>
+        <li>Make tuna salad, then chill it in a leak-proof container.</li>
+        <li>Make no-bake cookies for an easy trail treat.</li>
+        <li>Wash fruit and carrots, slice peppers, and pack dinner ingredients by meal.</li>
+        <li>Freeze water bottles or ice packs to help the cooler stay cold longer.</li>
+      </ul>
+    </section>
+
+    <section class="note-strip">
+      <strong>Tip:</strong> Dinner cards with a swap button update the grocery list below. Pick the version you want to cook, then check off items as you shop and pack.
+    </section>
+
+    <section class="meal-grid" aria-label="Meal plan">
+      <article class="recipe-card" data-static-meal="day1-lunch">
+        <div class="meal-header">
+          <div>
+            <h3>Day 1 lunch - Tuna trail wraps</h3>
+            <p class="meal-time">June 17, arrive around noon</p>
+          </div>
+          <span class="meal-note">Pre-made</span>
+        </div>
+        <p>Easy first meal after arrival: cold tuna salad wraps with lettuce, fruit, and a quick setup at camp.</p>
+        <div class="ingredients">
+          <h4>What to pack</h4>
+          <ul>
+            <li>Pre-made tuna salad</li>
+            <li>Flour tortillas</li>
+            <li>Lettuce leaves</li>
+            <li>Apples or grapes on the side</li>
+          </ul>
+        </div>
+        <div class="directions">
+          <h4>Camp steps</h4>
+          <ul>
+            <li>Lay out tortillas and lettuce.</li>
+            <li>Spoon in tuna salad and roll.</li>
+            <li>Serve with fruit while camp gets settled.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="recipe-card" data-swap-group="day1-dinner">
+        <div class="meal-header">
+          <div>
+            <h3>Day 1 dinner - First night by the fire</h3>
+            <p class="meal-time">June 17 dinner</p>
+          </div>
+          <button type="button" class="swap-btn" aria-label="Swap Day 1 dinner option">⇄ SWAP</button>
+        </div>
+
+        <div class="swap-option active" data-meal-key="day1-dinner-hotdogs" data-option-label="Hot dogs over the fire">
+          <p>Classic campfire hot dogs roasted on sticks, served with baked beans. The perfect easy first-night dinner.</p>
+          <div class="ingredients">
+            <h4>Ingredients</h4>
+            <ul>
+              <li>Hot dogs (turkey or all-beef)</li>
+              <li>Hot dog buns</li>
+              <li>Canned baked beans</li>
+              <li>Ketchup, mustard, relish</li>
+            </ul>
+          </div>
+          <div class="directions">
+            <h4>Directions</h4>
+            <ul>
+              <li>Roast hot dogs on sticks over the campfire until charred to your liking.</li>
+              <li>Heat beans in a pot on the camp stove.</li>
+              <li>Serve in buns with your favorite toppings.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="swap-option" data-meal-key="day1-dinner-kabobs" data-option-label="Shrimp kabobs">
+          <p>Grilled shrimp kabobs with veggies over the campfire grate. Quick to cook and fun to eat off the skewer.</p>
+          <div class="ingredients">
+            <h4>Ingredients</h4>
+            <ul>
+              <li>1 lb large shrimp (peeled, deveined)</li>
+              <li>Bell peppers, cut into chunks</li>
+              <li>Zucchini, sliced into rounds</li>
+              <li>Cherry tomatoes</li>
+              <li>Olive oil, garlic, lemon, salt, pepper</li>
+              <li>Metal or pre-soaked wooden skewers</li>
+            </ul>
+          </div>
+          <div class="directions">
+            <h4>Directions</h4>
+            <ul>
+              <li>Thread shrimp and veggies onto skewers, alternating colors.</li>
+              <li>Brush with olive oil and season with garlic, salt, and pepper.</li>
+              <li>Grill over campfire grate 2-3 minutes per side until shrimp are pink.</li>
+              <li>Squeeze lemon over the top before serving.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="swap-status" aria-live="polite"></p>
+      </article>
+
+      <article class="recipe-card" data-static-meal="day1-snacks">
+        <div class="meal-header">
+          <div>
+            <h3>Day 1 snacks - Trail treats</h3>
+            <p class="meal-time">Anytime on June 17</p>
+          </div>
+          <span class="meal-note">Grab and go</span>
+        </div>
+        <ul>
+          <li>No-bake cookies</li>
+          <li>Trail mix</li>
+          <li>Fruit</li>
+        </ul>
+      </article>
+
+      <article class="recipe-card" data-static-meal="day2-breakfast">
+        <div class="meal-header">
+          <div>
+            <h3>Day 2 breakfast - Camp stove scramble</h3>
+            <p class="meal-time">June 18 breakfast</p>
+          </div>
+          <span class="meal-note">Quick skillet meal</span>
+        </div>
+        <p>Use the pre-mixed egg jar to get breakfast on the table fast.</p>
+        <div class="ingredients">
+          <h4>Ingredients</h4>
+          <ul>
+            <li>Pre-scrambled eggs in a jar</li>
+            <li>Bread for toast</li>
+            <li>Butter or oil</li>
+            <li>Fruit on the side</li>
+          </ul>
+        </div>
+        <div class="directions">
+          <h4>Directions</h4>
+          <ul>
+            <li>Cook eggs in a skillet over the camp stove.</li>
+            <li>Toast bread in a pan or camp toaster.</li>
+            <li>Serve with fruit for an easy start before the day outing.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="recipe-card" data-static-meal="day2-lunch">
+        <div class="meal-header">
+          <div>
+            <h3>Day 2 lunch - Trail pack PB&amp;Honey</h3>
+            <p class="meal-time">June 18 lunch</p>
+          </div>
+          <span class="meal-note">Pack for the trail</span>
+        </div>
+        <div class="ingredients">
+          <h4>Ingredients</h4>
+          <ul>
+            <li>Sandwich bread</li>
+            <li>Peanut butter and honey</li>
+            <li>Chips</li>
+            <li>Carrot sticks</li>
+          </ul>
+        </div>
+        <div class="directions">
+          <h4>Pack-out plan</h4>
+          <ul>
+            <li>Make sandwiches before leaving camp.</li>
+            <li>Portion chips and carrots into easy trail bags or containers.</li>
+            <li>Pack extra water and a few cookies for morale.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="recipe-card" data-swap-group="day2-dinner">
+        <div class="meal-header">
+          <div>
+            <h3>Day 2 dinner - Easy second-night comfort food</h3>
+            <p class="meal-time">June 18 dinner</p>
+          </div>
+          <button type="button" class="swap-btn" aria-label="Swap Day 2 dinner option">⇄ SWAP</button>
+        </div>
+
+        <div class="swap-option active" data-meal-key="day2-dinner-pieiron" data-option-label="Pie iron sandwiches">
+          <p>Campfire pie iron sandwiches are fun to make and endlessly customizable. Everyone picks their own filling!</p>
+          <div class="ingredients">
+            <h4>Ingredients</h4>
+            <ul>
+              <li>Sandwich bread (white or sourdough)</li>
+              <li>Butter for the outside</li>
+              <li>Pizza fillings: marinara, mozzarella, pepperoni (turkey)</li>
+              <li>Dessert fillings: Nutella and banana, or pie filling</li>
+              <li>Savory fillings: ham and cheese, chicken and pesto</li>
+            </ul>
+          </div>
+          <div class="directions">
+            <h4>Directions</h4>
+            <ul>
+              <li>Butter the outside of two bread slices.</li>
+              <li>Place one slice butter-side-down in the pie iron, add fillings, top with second slice butter-side-up.</li>
+              <li>Close the iron and cook over campfire coals 3-5 minutes per side until golden and crispy.</li>
+              <li>Let cool slightly before eating - the filling is hot!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="swap-option" data-meal-key="day2-dinner-kabobs" data-option-label="Shrimp kabobs">
+          <p>Grilled shrimp kabobs with veggies over the campfire. Quick, colorful, and satisfying after a day outdoors.</p>
+          <div class="ingredients">
+            <h4>Ingredients</h4>
+            <ul>
+              <li>1 lb large shrimp (peeled, deveined)</li>
+              <li>Bell peppers, cut into chunks</li>
+              <li>Zucchini, sliced into rounds</li>
+              <li>Cherry tomatoes</li>
+              <li>Olive oil, garlic, lemon, salt, pepper</li>
+              <li>Metal or pre-soaked wooden skewers</li>
+            </ul>
+          </div>
+          <div class="directions">
+            <h4>Directions</h4>
+            <ul>
+              <li>Thread shrimp and veggies onto skewers, alternating colors.</li>
+              <li>Brush with olive oil and season with garlic, salt, and pepper.</li>
+              <li>Grill over campfire grate 2-3 minutes per side until shrimp are pink.</li>
+              <li>Squeeze lemon over the top before serving.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="swap-status" aria-live="polite"></p>
+      </article>
+
+      <article class="recipe-card" data-static-meal="day2-dessert">
+        <div class="meal-header">
+          <div>
+            <h3>Day 2 dessert - S'mores by the fire</h3>
+            <p class="meal-time">June 18 after dinner</p>
+          </div>
+          <span class="meal-note">Camp classic</span>
+        </div>
+        <ul>
+          <li>Marshmallows</li>
+          <li>Graham crackers</li>
+          <li>Chocolate bars</li>
+        </ul>
+      </article>
+
+      <article class="recipe-card" data-static-meal="day3-breakfast">
+        <div class="meal-header">
+          <div>
+            <h3>Day 3 breakfast - Fast pack-up bowls</h3>
+            <p class="meal-time">June 19 breakfast</p>
+          </div>
+          <span class="meal-note">Minimal cleanup</span>
+        </div>
+        <div class="ingredients">
+          <h4>Ingredients</h4>
+          <ul>
+            <li>Instant oatmeal packets</li>
+            <li>Bananas</li>
+            <li>Coffee for adults</li>
+            <li>Hot cocoa for the kiddo</li>
+          </ul>
+        </div>
+        <div class="directions">
+          <h4>Directions</h4>
+          <ul>
+            <li>Boil water on the camp stove.</li>
+            <li>Make oatmeal, coffee, and cocoa in one quick round.</li>
+            <li>Eat, pack camp, and save remaining snacks for the ferry ride home.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="recipe-card" data-static-meal="ferry-snacks">
+        <div class="meal-header">
+          <div>
+            <h3>Ride-home snack stash</h3>
+            <p class="meal-time">June 19 ferry ride</p>
+          </div>
+          <span class="meal-note">Use the extras</span>
+        </div>
+        <ul>
+          <li>Pack remaining fruit, trail mix, cookies, and chips into easy reach bags.</li>
+          <li>Keep water bottles handy for the drive and ferry.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card" style="margin-top: 2rem;">
+      <div class="grocery-header">
+        <div>
+          <h2>Dynamic grocery list</h2>
+          <p style="color: var(--muted-text); margin-top: 0.35rem;">
+            The list below updates when dinner swaps change. Check items off as you shop or pack.
+          </p>
+        </div>
+        <span class="selection-note" id="selectionSummary">Using default dinner picks</span>
+      </div>
+      <div id="groceryList" class="grocery-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="prep-kit">
+      <h3>Dog and camp reminder kit</h3>
+      <ul class="mini-list">
+        <li>Pack dog food for all meals, plus one extra portion.</li>
+        <li>Bring dog bowls, treats, leash, poop bags, and a towel for muddy paws.</li>
+        <li>Set aside roasting sticks, lighter, matches, and extra foil with the camp kitchen tote.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const swapStorageKey = 'orcasIslandMealSwaps';
+    const checkboxStorageKey = 'orcasIslandGroceryChecks';
+
+    const groceryByMeal = {
+      'day1-lunch': {
+        'Proteins': ['2 cans tuna'],
+        'Produce': ['1 head lettuce', '2 apples or 1 bunch grapes'],
+        'Pantry': ['Mayonnaise for tuna salad', 'Sweet relish or pickle, optional'],
+        'Bread & Tortillas': ['1 pack flour tortillas']
+      },
+      'day1-dinner-hotdogs': {
+        'Proteins': ['1 pack hot dogs'],
+        'Pantry': ['1 can baked beans', 'Ketchup', 'Mustard', 'Relish'],
+        'Bread & Tortillas': ['1 pack hot dog buns']
+      },
+      'day1-dinner-kabobs': {
+        'Proteins': ['1 lb large shrimp (peeled, deveined)'],
+        'Produce': ['2 bell peppers', '2 zucchini', '1 pint cherry tomatoes', '1 lemon'],
+        'Pantry': ['Olive oil', 'Garlic (minced or powder)', 'Salt', 'Pepper'],
+        'Campfire Supplies': ['Metal or wooden skewers']
+      },
+      'day1-snacks': {
+        'Produce': ['Extra fruit for snacking'],
+        'Pantry': ['Trail mix'],
+        'Snacks & Treats': ['No-bake cookies']
+      },
+      'day2-breakfast': {
+        'Dairy & Eggs': ['8 eggs', 'Butter or cooking oil'],
+        'Produce': ['Fruit for breakfast'],
+        'Bread & Tortillas': ['1 loaf sandwich bread']
+      },
+      'day2-lunch': {
+        'Produce': ['1 bag carrots'],
+        'Pantry': ['Peanut butter', 'Honey', '1 bag chips'],
+        'Bread & Tortillas': ['Extra sandwich bread for PB&H']
+      },
+      'day2-dinner-pieiron': {
+        'Bread & Tortillas': ['1 loaf sandwich bread (white or sourdough)'],
+        'Dairy & Eggs': ['Butter', 'Shredded mozzarella'],
+        'Pantry': ['Small jar marinara', 'Nutella'],
+        'Proteins': ['Turkey pepperoni', 'Sliced ham'],
+        'Produce': ['2 bananas (for dessert pie irons)']
+      },
+      'day2-dinner-kabobs': {
+        'Proteins': ['1 lb large shrimp (peeled, deveined)'],
+        'Produce': ['2 bell peppers', '2 zucchini', '1 pint cherry tomatoes', '1 lemon'],
+        'Pantry': ['Olive oil', 'Garlic (minced or powder)', 'Salt', 'Pepper'],
+        'Campfire Supplies': ['Metal or wooden skewers']
+      },
+      'day2-dessert': {
+        'Snacks & Treats': ['1 bag marshmallows', '1 box graham crackers', '2 chocolate bars']
+      },
+      'day3-breakfast': {
+        'Produce': ['4 to 5 bananas'],
+        'Pantry': ['1 box instant oatmeal packets'],
+        'Drinks': ['Ground coffee or instant coffee', 'Hot cocoa packets']
+      },
+      'ferry-snacks': {
+        'Drinks': ['Water bottles']
+      },
+      'prep-ahead': {
+        'Pantry': ['Quick oats', 'Cocoa powder', 'Sugar', 'Vanilla extract'],
+        'Dairy & Eggs': ['1 stick butter', 'Milk'],
+        'Dog Supplies': ['Dog treats', 'Poop bags'],
+        'Campfire Supplies': ['Lighter or matches', 'Roasting sticks']
+      },
+      'dog-supplies': {
+        'Dog Supplies': ['Dog food', '2 dog bowls']
+      }
+    };
+
+    const categoryOrder = [
+      'Proteins',
+      'Produce',
+      'Dairy & Eggs',
+      'Pantry',
+      'Bread & Tortillas',
+      'Snacks & Treats',
+      'Drinks',
+      'Dog Supplies',
+      'Campfire Supplies'
+    ];
+
+    function readJson(key, fallback) {
+      try {
+        return JSON.parse(localStorage.getItem(key)) || fallback;
+      } catch (error) {
+        return fallback;
+      }
+    }
+
+    function saveJson(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    function slugify(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
+    function updateSwapCard(card, activeIndex, saveState) {
+      const options = Array.from(card.querySelectorAll('.swap-option'));
+      options.forEach((option, index) => {
+        const isActive = index === activeIndex;
+        option.classList.toggle('active', isActive);
+        option.setAttribute('aria-hidden', String(!isActive));
+      });
+
+      const activeOption = options[activeIndex];
+      const status = card.querySelector('.swap-status');
+      status.textContent = `Current plan: ${activeOption.dataset.optionLabel}`;
+
+      if (saveState) {
+        const storedSwaps = readJson(swapStorageKey, {});
+        storedSwaps[card.dataset.swapGroup] = activeIndex;
+        saveJson(swapStorageKey, storedSwaps);
+      }
+    }
+
+    function setupSwaps() {
+      const storedSwaps = readJson(swapStorageKey, {});
+      document.querySelectorAll('[data-swap-group]').forEach((card) => {
+        const options = Array.from(card.querySelectorAll('.swap-option'));
+        const savedIndex = Number.isInteger(storedSwaps[card.dataset.swapGroup]) ? storedSwaps[card.dataset.swapGroup] : 0;
+        const startIndex = savedIndex >= 0 && savedIndex < options.length ? savedIndex : 0;
+        updateSwapCard(card, startIndex, false);
+
+        const button = card.querySelector('.swap-btn');
+        button.addEventListener('click', () => {
+          const currentIndex = options.findIndex((option) => option.classList.contains('active'));
+          const nextIndex = (currentIndex + 1) % options.length;
+          updateSwapCard(card, nextIndex, true);
+          renderGroceryList();
+        });
+      });
+    }
+
+    function getSelectedMealKeys() {
+      const selectedKeys = ['prep-ahead', 'dog-supplies'];
+
+      document.querySelectorAll('[data-static-meal]').forEach((card) => {
+        selectedKeys.push(card.dataset.staticMeal);
+      });
+
+      document.querySelectorAll('[data-swap-group]').forEach((card) => {
+        const activeOption = card.querySelector('.swap-option.active');
+        if (activeOption) {
+          selectedKeys.push(activeOption.dataset.mealKey);
+        }
+      });
+
+      return selectedKeys;
+    }
+
+    function getSelectionSummary() {
+      const labels = Array.from(document.querySelectorAll('[data-swap-group] .swap-option.active'))
+        .map((option) => option.dataset.optionLabel);
+      return labels.join(' + ');
+    }
+
+    function renderGroceryList() {
+      const container = document.getElementById('groceryList');
+      const checkedState = readJson(checkboxStorageKey, {});
+      const selectedMealKeys = getSelectedMealKeys();
+      const combined = {};
+
+      selectedMealKeys.forEach((mealKey) => {
+        const mealGroceries = groceryByMeal[mealKey] || {};
+        Object.entries(mealGroceries).forEach(([category, items]) => {
+          combined[category] = combined[category] || [];
+          items.forEach((item) => {
+            if (!combined[category].includes(item)) {
+              combined[category].push(item);
+            }
+          });
+        });
+      });
+
+      container.innerHTML = '';
+
+      categoryOrder.forEach((category) => {
+        const items = combined[category];
+        if (!items || !items.length) {
+          return;
+        }
+
+        const section = document.createElement('section');
+        section.className = 'grocery-section';
+
+        const heading = document.createElement('h3');
+        heading.textContent = category;
+        section.appendChild(heading);
+
+        items.forEach((item) => {
+          const itemId = slugify(`${category}-${item}`);
+          const wrapper = document.createElement('div');
+          wrapper.className = 'checkbox-item';
+
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.id = itemId;
+          checkbox.checked = Boolean(checkedState[itemId]);
+          checkbox.setAttribute('aria-label', item);
+
+          checkbox.addEventListener('change', () => {
+            const latestChecks = readJson(checkboxStorageKey, {});
+            latestChecks[itemId] = checkbox.checked;
+            saveJson(checkboxStorageKey, latestChecks);
+          });
+
+          const label = document.createElement('label');
+          label.htmlFor = itemId;
+          label.textContent = item;
+
+          wrapper.appendChild(checkbox);
+          wrapper.appendChild(label);
+          section.appendChild(wrapper);
+        });
+
+        container.appendChild(section);
+      });
+
+      if (!container.children.length) {
+        container.innerHTML = '<p class="grocery-empty">No grocery items available.</p>';
+      }
+
+      document.getElementById('selectionSummary').textContent = getSelectionSummary();
+    }
+
+    setupSwaps();
+    renderGroceryList();
+  </script>
+</body>
+</html>

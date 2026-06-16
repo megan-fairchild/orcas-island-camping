@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orcas Island Camping - Clothing and Gear Guide</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .weather-grid,
+    .clothing-grid,
+    .checklist-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .weather-grid,
+    .clothing-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .weather-overview {
+      margin-bottom: 2rem;
+    }
+
+    .weather-overview .weather-note,
+    .clothing-card .weather-note {
+      background: #eef7ea;
+      border-left: 4px solid var(--accent);
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .weather-overview .weather-note strong,
+    .clothing-card .weather-note strong {
+      color: var(--primary);
+    }
+
+    .clothing-card ul {
+      padding-left: 1.25rem;
+      margin-top: 0.75rem;
+    }
+
+    .clothing-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .clothing-card p + p {
+      margin-top: 0.75rem;
+    }
+
+    .packing-note {
+      background: #fff8e8;
+      border-left: 4px solid var(--warning);
+      border-radius: 0 8px 8px 0;
+      padding: 0.9rem 1rem;
+      margin-top: 1rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-controls {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .section-btn {
+      border: none;
+      border-radius: 6px;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .section-btn.secondary {
+      background: var(--accent-dark);
+    }
+
+    .section-btn:hover,
+    .section-btn:focus-visible {
+      opacity: 0.92;
+    }
+
+    .grocery-section {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .group-note {
+      color: var(--muted-text);
+      font-size: 0.92rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .checklist-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .checkbox-item label {
+      flex: 1;
+    }
+
+    @media (max-width: 600px) {
+      .checklist-grid,
+      .weather-grid,
+      .clothing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Primary">
+    <a href="event-hub.html" class="nav-brand">🌲 Orcas Field Guide</a>
+    <a href="event-hub.html">Event Hub</a>
+    <a href="itinerary.html">Itinerary</a>
+    <a href="activities.html">Activities</a>
+    <a href="meals.html">Meals</a>
+    <a href="clothing.html" class="active" aria-current="page">Clothing</a>
+    <a href="printables/activity-book.html">Activity Book</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="emblem">🎒</div>
+    <h1>Clothing and Gear Guide</h1>
+    <p class="subtitle">Moran State Park, Orcas Island, WA - June 17-19, 2026</p>
+  </header>
+
+  <main class="container">
+    <section class="clothing-card weather-overview">
+      <h2>Weather Overview</h2>
+      <p style="margin: 0.5rem 0 1rem; color: var(--muted-text);">Expect sunny days, warm afternoons, cool nights, and a little breeze. Pack for easy daytime layers plus cozy camp layers after sunset.</p>
+      <div class="weather-grid">
+        <div class="weather-note">
+          <div>
+            <strong>Wednesday, June 17</strong><br>
+            Sunny. High 71°F, low 54°F. WSW wind 6-8 mph.
+          </div>
+        </div>
+        <div class="weather-note">
+          <div>
+            <strong>Thursday, June 18</strong><br>
+            Sunny. High 68°F, low 55°F. Calm evening.
+          </div>
+        </div>
+        <div class="weather-note">
+          <div>
+            <strong>Friday, June 19</strong><br>
+            Sunny. High 71°F. Great weather for pack-up and the ride home.
+          </div>
+        </div>
+      </div>
+      <div class="packing-note">
+        <strong>Sleep setup tip:</strong> Air mattresses lose heat underneath you. Bring sleeping bags or warm blankets for 54°F nights, plus an insulating layer under the sleeper or between the mattress and bedding.
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin-bottom: 1rem;">Day-by-Day Clothing Guide</h2>
+      <div class="clothing-grid">
+        <article class="clothing-card">
+          <h3>Day 1 - Travel and camp setup</h3>
+          <div class="weather-note">
+            <div><strong>71°F / 54°F:</strong> Warm in the afternoon, cooler once the sun drops.</div>
+          </div>
+          <p>Wear comfortable travel clothes that can go straight into setup mode. T-shirts, shorts, or lightweight pants work well for the ferry, unloading, and getting camp organized.</p>
+          <ul>
+            <li>Start with a breathable t-shirt or moisture-wicking top.</li>
+            <li>Choose shorts for the day, but keep long pants easy to grab for evening.</li>
+            <li>Bring a fleece or hoodie in the top of the duffel for sunset and campsite wind.</li>
+            <li>Use sturdy sneakers or hiking shoes for hauling gear around camp.</li>
+          </ul>
+        </article>
+
+        <article class="clothing-card">
+          <h3>Day 2 - Adventure day</h3>
+          <div class="weather-note">
+            <div><strong>68°F / 55°F:</strong> Sunny hiking weather, then a calm, cooler evening.</div>
+          </div>
+          <p>Plan for a full active day with hiking, swimming, and campfire time. Quick-dry layers help everyone stay comfortable if the lake is part of the plan.</p>
+          <ul>
+            <li>Hiking outfit: moisture-wicking top, shorts, hiking socks, and sturdy shoes.</li>
+            <li>Pack swimsuits, quick-dry towels, and water shoes for the lake.</li>
+            <li>Keep sun hats on hand for the long June daylight.</li>
+            <li>Switch to long pants, a fleece or hoodie, and dry socks for campfire time.</li>
+          </ul>
+        </article>
+
+        <article class="clothing-card">
+          <h3>Day 3 - Pack up and travel home</h3>
+          <div class="weather-note">
+            <div><strong>71°F daytime:</strong> Easy, comfortable clothes make break-down simpler.</div>
+          </div>
+          <p>Choose clothes that can handle a little dirt while packing camp, then stay comfortable for the ferry and drive home.</p>
+          <ul>
+            <li>Fresh t-shirt and shorts or light pants for a cleaner ride home.</li>
+            <li>Closed-toe shoes help with loading bins, stakes, and wet gear.</li>
+            <li>Keep one light layer out for the morning cool-down.</li>
+            <li>Set aside a small bag for damp swimsuits, towels, or dog gear.</li>
+          </ul>
+        </article>
+
+        <article class="clothing-card">
+          <h3>Nighttime - Warm sleep layers</h3>
+          <div class="weather-note">
+            <div><strong>54-55°F nights:</strong> The air mattress will feel colder than the air temperature.</div>
+          </div>
+          <p>Night comfort matters most on this trip. The air mattress can pull heat away from you from below, even when the forecast looks mild.</p>
+          <ul>
+            <li>Wear warm pajamas and thick socks for sleeping.</li>
+            <li>Use sleeping bags or layered sheets and warm blankets that are comfortable around 50°F nights.</li>
+            <li>Place a foam pad, thick blanket, or emergency blanket under the sleeper or between the mattress and bedding for insulation.</li>
+            <li>Keep an extra blanket within reach for the child and one for early morning lounging.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem;">
+      <h2 style="margin-bottom: 0.5rem;">Full Packing Checklist</h2>
+      <p style="margin-bottom: 1rem; color: var(--muted-text);">Each section saves automatically on this device. Use Check All or Clear All for quick resets while packing.</p>
+
+      <div class="grocery-section" data-section="shelter-sleep">
+        <div class="section-header">
+          <h3>Shelter and Sleep</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="shelter-sleep" aria-label="Check all shelter and sleep items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="shelter-sleep" aria-label="Clear all shelter and sleep items">Clear All</button>
+          </div>
+        </div>
+        <p class="group-note">Prioritize warmth from below because the blow-up mattress will feel chilly overnight.</p>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-tent" data-section="shelter-sleep"><label for="shelter-tent">Tent</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-air-mattress" data-section="shelter-sleep"><label for="shelter-air-mattress">Air mattress (blow-up)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-air-pump" data-section="shelter-sleep"><label for="shelter-air-pump">Air pump (battery or manual)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-sleeping-bags" data-section="shelter-sleep"><label for="shelter-sleeping-bags">Sleeping bags or warm blankets (rated for 50°F+)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-insulating-layer" data-section="shelter-sleep"><label for="shelter-insulating-layer">Insulating layer to put UNDER air mattress or between mattress and sleepers (foam pad, thick blanket, or emergency blanket)</label></div>
+          </div>
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-pillows" data-section="shelter-sleep"><label for="shelter-pillows">Pillows</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-extra-blanket" data-section="shelter-sleep"><label for="shelter-extra-blanket">Extra blanket for cold nights</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="shelter-ground-tarp" data-section="shelter-sleep"><label for="shelter-ground-tarp">Ground tarp</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="clothing">
+        <div class="section-header">
+          <h3>Clothing (per person)</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="clothing" aria-label="Check all clothing items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="clothing" aria-label="Clear all clothing items">Clear All</button>
+          </div>
+        </div>
+        <p class="group-note">For 2 adults and 1 child, scale these counts for each person. Keep one warm layer accessible during ferry and camp setup.</p>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-tshirts" data-section="clothing"><label for="clothing-tshirts">3 t-shirts/tops</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-shorts" data-section="clothing"><label for="clothing-shorts">2 shorts</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-long-pants" data-section="clothing"><label for="clothing-long-pants">1 long pants (for evenings)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-fleece" data-section="clothing"><label for="clothing-fleece">Fleece jacket or hoodie</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-pajamas" data-section="clothing"><label for="clothing-pajamas">Warm pajamas + thick socks for sleeping</label></div>
+          </div>
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-underwear" data-section="clothing"><label for="clothing-underwear">Underwear (3 days)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-hiking-socks" data-section="clothing"><label for="clothing-hiking-socks">Hiking socks (2 pairs)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-swimsuit" data-section="clothing"><label for="clothing-swimsuit">Swimsuit</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-rain-jacket" data-section="clothing"><label for="clothing-rain-jacket">Rain jacket (just in case)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-sun-hat" data-section="clothing"><label for="clothing-sun-hat">Sun hat</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="clothing-sandals" data-section="clothing"><label for="clothing-sandals">Sandals/flip flops for camp</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="footwear">
+        <div class="section-header">
+          <h3>Footwear</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="footwear" aria-label="Check all footwear items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="footwear" aria-label="Clear all footwear items">Clear All</button>
+          </div>
+        </div>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="footwear-hiking-shoes" data-section="footwear"><label for="footwear-hiking-shoes">Hiking shoes or sturdy sneakers</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="footwear-water-shoes" data-section="footwear"><label for="footwear-water-shoes">Water shoes for lake</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="footwear-camp-sandals" data-section="footwear"><label for="footwear-camp-sandals">Camp sandals</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="cooking-food">
+        <div class="section-header">
+          <h3>Cooking and Food</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="cooking-food" aria-label="Check all cooking and food items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="cooking-food" aria-label="Clear all cooking and food items">Clear All</button>
+          </div>
+        </div>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="food-stove" data-section="cooking-food"><label for="food-stove">Camp stove + fuel</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-lighter" data-section="cooking-food"><label for="food-lighter">Lighter/matches (2 sources)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-cooler" data-section="cooking-food"><label for="food-cooler">Cooler + ice</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-cookware" data-section="cooking-food"><label for="food-cookware">Cast iron pan or camp cookware</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-plates" data-section="cooking-food"><label for="food-plates">Plates, cups, utensils (reusable)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-cutting-board" data-section="cooking-food"><label for="food-cutting-board">Cutting board + knife</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-paper-towels" data-section="cooking-food"><label for="food-paper-towels">Paper towels / napkins</label></div>
+          </div>
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="food-trash-bags" data-section="cooking-food"><label for="food-trash-bags">Trash bags</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-dish-soap" data-section="cooking-food"><label for="food-dish-soap">Dish soap + sponge</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-water-bottles" data-section="cooking-food"><label for="food-water-bottles">Water bottles (refillable)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-coffee-maker" data-section="cooking-food"><label for="food-coffee-maker">Coffee maker (percolator or pour-over)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-roasting-sticks" data-section="cooking-food"><label for="food-roasting-sticks">Roasting sticks for s'mores and hot dogs</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-pie-irons" data-section="cooking-food"><label for="food-pie-irons">Pie irons (campfire sandwich makers)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-foil" data-section="cooking-food"><label for="food-foil">Aluminum foil</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-skewers" data-section="cooking-food"><label for="food-skewers">Metal or wooden skewers (for kabobs)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="food-ziplock" data-section="cooking-food"><label for="food-ziplock">Ziplock bags</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="camp-essentials">
+        <div class="section-header">
+          <h3>Camp Essentials</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="camp-essentials" aria-label="Check all camp essentials items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="camp-essentials" aria-label="Clear all camp essentials items">Clear All</button>
+          </div>
+        </div>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-chairs" data-section="camp-essentials"><label for="camp-chairs">Camp chairs (3)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-headlamps" data-section="camp-essentials"><label for="camp-headlamps">Headlamps or flashlights (3)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-batteries" data-section="camp-essentials"><label for="camp-batteries">Extra batteries</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-lantern" data-section="camp-essentials"><label for="camp-lantern">Lantern for campsite</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-first-aid" data-section="camp-essentials"><label for="camp-first-aid">First aid kit</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-bug-spray" data-section="camp-essentials"><label for="camp-bug-spray">Bug spray</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-sunscreen" data-section="camp-essentials"><label for="camp-sunscreen">Sunscreen (SPF 30+)</label></div>
+          </div>
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-firewood" data-section="camp-essentials"><label for="camp-firewood">Firewood (buy at park or bring)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-fire-starter" data-section="camp-essentials"><label for="camp-fire-starter">Fire starter</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-multi-tool" data-section="camp-essentials"><label for="camp-multi-tool">Multi-tool or knife</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-duct-tape" data-section="camp-essentials"><label for="camp-duct-tape">Duct tape</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="camp-paracord" data-section="camp-essentials"><label for="camp-paracord">Rope or paracord</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="entertainment-comfort">
+        <div class="section-header">
+          <h3>Entertainment and Comfort</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="entertainment-comfort" aria-label="Check all entertainment and comfort items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="entertainment-comfort" aria-label="Clear all entertainment and comfort items">Clear All</button>
+          </div>
+        </div>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-speaker" data-section="entertainment-comfort"><label for="fun-speaker">Bluetooth speaker</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-card-games" data-section="entertainment-comfort"><label for="fun-card-games">Card games</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-activity-book" data-section="entertainment-comfort"><label for="fun-activity-book">Activity book (printed)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-colored-pencils" data-section="entertainment-comfort"><label for="fun-colored-pencils">Colored pencils/crayons</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-books" data-section="entertainment-comfort"><label for="fun-books">Books</label></div>
+          </div>
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-binoculars" data-section="entertainment-comfort"><label for="fun-binoculars">Binoculars (for birdwatching)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-camera" data-section="entertainment-comfort"><label for="fun-camera">Camera</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-frisbee" data-section="entertainment-comfort"><label for="fun-frisbee">Frisbee or ball</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-stargazing-app" data-section="entertainment-comfort"><label for="fun-stargazing-app">Stargazing app on phone</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-hammock" data-section="entertainment-comfort"><label for="fun-hammock">Hammock</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="fun-hammock-straps" data-section="entertainment-comfort"><label for="fun-hammock-straps">Hammock tree straps (BUY: MalloMe XL recommended)</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="hygiene">
+        <div class="section-header">
+          <h3>Hygiene</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="hygiene" aria-label="Check all hygiene items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="hygiene" aria-label="Clear all hygiene items">Clear All</button>
+          </div>
+        </div>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="hygiene-towels" data-section="hygiene"><label for="hygiene-towels">Towels (bath + quick-dry)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="hygiene-toiletries" data-section="hygiene"><label for="hygiene-toiletries">Toiletries</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="hygiene-coins" data-section="hygiene"><label for="hygiene-coins">Coins for camp showers</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="hygiene-baby-wipes" data-section="hygiene"><label for="hygiene-baby-wipes">Baby wipes</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="hygiene-sanitizer" data-section="hygiene"><label for="hygiene-sanitizer">Hand sanitizer</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="hygiene-toilet-paper" data-section="hygiene"><label for="hygiene-toilet-paper">Toilet paper (backup)</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="dog-gear">
+        <div class="section-header">
+          <h3>Dog Gear</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="dog-gear" aria-label="Check all dog gear items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="dog-gear" aria-label="Clear all dog gear items">Clear All</button>
+          </div>
+        </div>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-food" data-section="dog-gear"><label for="dog-food">Dog food (measured per day in bags)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-bowls" data-section="dog-gear"><label for="dog-bowls">Dog bowls (water + food)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-leashes" data-section="dog-gear"><label for="dog-leashes">Leashes (2)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-tie-out" data-section="dog-gear"><label for="dog-tie-out">Long lead/tie-out for campsite</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-beds" data-section="dog-gear"><label for="dog-beds">Dog beds or blankets</label></div>
+          </div>
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-poop-bags" data-section="dog-gear"><label for="dog-poop-bags">Poop bags</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-treats" data-section="dog-gear"><label for="dog-treats">Dog treats</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-towels" data-section="dog-gear"><label for="dog-towels">Dog towels (for lake swimming)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-vax-records" data-section="dog-gear"><label for="dog-vax-records">Vaccination records (some parks ask)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="dog-calming-aid" data-section="dog-gear"><label for="dog-calming-aid">Calming aid for nervous dog (if applicable)</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grocery-section" data-section="vehicle-ferry">
+        <div class="section-header">
+          <h3>Vehicle and Ferry</h3>
+          <div class="section-controls">
+            <button class="section-btn" type="button" data-action="check" data-section="vehicle-ferry" aria-label="Check all vehicle and ferry items">Check All</button>
+            <button class="section-btn secondary" type="button" data-action="clear" data-section="vehicle-ferry" aria-label="Clear all vehicle and ferry items">Clear All</button>
+          </div>
+        </div>
+        <div class="checklist-grid">
+          <div>
+            <div class="checkbox-item"><input type="checkbox" id="vehicle-ferry-confirmation" data-section="vehicle-ferry"><label for="vehicle-ferry-confirmation">Ferry reservation confirmation</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="vehicle-cash" data-section="vehicle-ferry"><label for="vehicle-cash">Cash for parking/firewood</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="vehicle-chargers" data-section="vehicle-ferry"><label for="vehicle-chargers">Phone chargers + car charger</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="vehicle-paper-maps" data-section="vehicle-ferry"><label for="vehicle-paper-maps">Paper maps (cell service spotty on island)</label></div>
+            <div class="checkbox-item"><input type="checkbox" id="vehicle-ferry-snacks" data-section="vehicle-ferry"><label for="vehicle-ferry-snacks">Snacks for ferry ride</label></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const storageKey = 'orcas-island-camping-clothing-checklist';
+      const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"][data-section]'));
+      const buttons = Array.from(document.querySelectorAll('button[data-action][data-section]'));
+
+      function readState() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey)) || {};
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function writeState(state) {
+        localStorage.setItem(storageKey, JSON.stringify(state));
+      }
+
+      function saveCheckbox(checkbox) {
+        const state = readState();
+        state[checkbox.id] = checkbox.checked;
+        writeState(state);
+      }
+
+      function applyStoredState() {
+        const state = readState();
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = Boolean(state[checkbox.id]);
+        });
+      }
+
+      function setSection(sectionName, checked) {
+        const state = readState();
+        checkboxes
+          .filter((checkbox) => checkbox.dataset.section === sectionName)
+          .forEach((checkbox) => {
+            checkbox.checked = checked;
+            state[checkbox.id] = checked;
+          });
+        writeState(state);
+      }
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => saveCheckbox(checkbox));
+      });
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const isCheckAll = button.dataset.action === 'check';
+          setSection(button.dataset.section, isCheckAll);
+        });
+      });
+
+      applyStoredState();
+    }());
+  </script>
+</body>
+</html>
