@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List - Orcas Island Camping</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #222;
+      padding: 0.5in;
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+    .subtitle { color: #555; font-size: 0.9rem; margin-bottom: 1rem; }
+    h2 {
+      font-size: 1.05rem;
+      margin: 1.25rem 0 0.4rem;
+      padding: 0.3rem 0.5rem;
+      background: #2d5016;
+      color: #fff;
+      border-radius: 4px;
+    }
+    ul { list-style: none; padding: 0; }
+    li {
+      padding: 0.3rem 0 0.3rem 1.6rem;
+      position: relative;
+      border-bottom: 1px dotted #ddd;
+    }
+    li::before {
+      content: '☐';
+      position: absolute;
+      left: 0.2rem;
+      font-size: 1.1rem;
+    }
+    li.purchased {
+      color: #999;
+      text-decoration: line-through;
+    }
+    li.purchased::before {
+      content: '☑';
+      color: #2d5016;
+    }
+    .note {
+      font-size: 0.8rem;
+      color: #666;
+      font-style: italic;
+      padding-left: 1.6rem;
+      margin-top: -0.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .section-note {
+      background: #f5f0e8;
+      border-left: 3px solid #d4a574;
+      padding: 0.4rem 0.6rem;
+      margin: 0.5rem 0;
+      font-size: 0.85rem;
+    }
+    .two-col {
+      columns: 2;
+      column-gap: 1.5rem;
+    }
+    .two-col li {
+      break-inside: avoid;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      color: #2d5016;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .print-btn {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.6rem 1.5rem;
+      background: #2d5016;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    @media print {
+      @page { size: 8.5in 11in; margin: 0; }
+      body { padding: 0.5in; font-size: 12px; }
+      h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .print-btn, .back-link { display: none; }
+      li.purchased { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <a href="prep-checklist.html" class="back-link">← Back to Prep Checklist</a>
+  <h1>🛒 Shopping List</h1>
+  <p class="subtitle">Orcas Island Camping, June 17-19, 2026</p>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print This Page</button>
+
+  <div class="section-note">Items are grouped by store section. Check off as you shop. Meal swap choices may change some items (see the meals page for swap details).</div>
+
+  <h2>🥩 Proteins</h2>
+  <ul>
+    <li>1 pack hot dogs</li>
+    <li>1 pack bacon</li>
+    <li>2 cans tuna</li>
+    <li>Turkey pepperoni</li>
+    <li>Sliced ham</li>
+    <li>1 lb large shrimp, peeled and deveined (if kabobs night)</li>
+    <li>1.5 lbs chicken breast or thighs (if foil packets night)</li>
+  </ul>
+
+  <h2>🥬 Produce</h2>
+  <ul class="two-col">
+    <li>Grapes</li>
+    <li>Baby carrots (2 bags)</li>
+    <li>Snap peas</li>
+    <li>4-5 bananas</li>
+    <li>Extra fruit for snacking (apples, oranges, berries)</li>
+    <li>2 bell peppers</li>
+    <li>1 lemon (if kabobs)</li>
+    <li>2 zucchini (if kabobs)</li>
+    <li>1 pint cherry tomatoes (if kabobs)</li>
+    <li>1 lb baby potatoes (if foil packets)</li>
+    <li>1 head broccoli (if foil packets)</li>
+  </ul>
+
+  <h2>🥚 Dairy &amp; Eggs</h2>
+  <ul>
+    <li>8 eggs</li>
+    <li>Butter (2 sticks)</li>
+    <li>Shredded mozzarella</li>
+    <li>Milk (small, for cocoa and no-bake cookies)</li>
+  </ul>
+
+  <h2>🥗 Deli &amp; Prepared</h2>
+  <ul>
+    <li>Pasta salad (buy pre-made or ingredients to make at home)</li>
+  </ul>
+
+  <h2>🍞 Bread &amp; Tortillas</h2>
+  <ul>
+    <li>1 pack hot dog buns</li>
+    <li>2 loaves sandwich bread (breakfast toast + pie irons + sandwiches)</li>
+  </ul>
+
+  <h2>🥫 Pantry</h2>
+  <ul class="two-col">
+    <li>Pancake mix (just-add-water)</li>
+    <li>Maple syrup</li>
+    <li>Peanut butter</li>
+    <li>Honey</li>
+    <li>Mayonnaise</li>
+    <li>Ketchup</li>
+    <li>Mustard</li>
+    <li>Relish</li>
+    <li>Olive oil</li>
+    <li>Small jar marinara</li>
+    <li>Nutella</li>
+    <li>Garlic (minced or powder)</li>
+    <li>Italian seasoning (if foil packets)</li>
+    <li>Salt and pepper</li>
+    <li>Trail mix</li>
+    <li>Quick oats (for no-bake cookies)</li>
+    <li>Cocoa powder (for no-bake cookies)</li>
+    <li>Sugar</li>
+    <li>Vanilla extract</li>
+  </ul>
+
+  <h2>🍿 Snacks &amp; Treats</h2>
+  <ul>
+    <li>Chips (2-3 bags, assorted)</li>
+    <li>1 bag marshmallows</li>
+    <li>1 box graham crackers</li>
+    <li>2 chocolate bars (for s'mores)</li>
+  </ul>
+
+  <h2>🥤 Drinks</h2>
+  <ul>
+    <li>Hot cocoa packets</li>
+    <li>Juice boxes</li>
+    <li>Water bottles (or refill at camp)</li>
+  </ul>
+
+  <h2>🐕 Dog Supplies</h2>
+  <ul>
+    <li>Dog food (measured per day, plus one extra portion)</li>
+    <li>Dog treats</li>
+    <li>Poop bags</li>
+  </ul>
+
+  <h2>🔥 Campfire &amp; Camp Supplies</h2>
+  <ul>
+    <li>Firewood (or buy at park)</li>
+    <li>Lighter or matches (2 sources)</li>
+    <li>Roasting sticks / skewers</li>
+    <li>Heavy-duty aluminum foil</li>
+    <li>Ice for cooler (buy morning of departure)</li>
+  </ul>
+
+  <h2>🧴 Toiletries &amp; Misc</h2>
+  <ul>
+    <li>Bug spray</li>
+    <li>Sunscreen SPF 30+</li>
+    <li>Extra batteries (headlamps, etc.)</li>
+  </ul>
+
+  <h2 style="background: #555;">✅ Already Purchased</h2>
+  <ul>
+    <li class="purchased">Hammock tree straps (MalloMe XL)</li>
+  </ul>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print This Page</button>
+</body>
+</html>
